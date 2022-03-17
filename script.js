@@ -1,6 +1,8 @@
 const buttonTag = document.querySelector(".btn");
 const parentTag = document.querySelector(".parent");
-const btnClick = document.querySelector('#btnClick');
+// const btnClick = document.querySelector('#btnClick');
+// const afterClick = document.querySelector('#afterClick');
+
 const openToastAlert = () => {
   parentTag.innerHTML = "";
   const toastAlertContainerTag = document.createElement("div");
@@ -8,7 +10,7 @@ const openToastAlert = () => {
   // create toastAlertTextTag
   const toastAlertTextTag = document.createElement("div");
   toastAlertTextTag.append(
-    `We use cookies . Your continued use of our site implies you agree to this. See details.`
+    `Hello I'm Toast Alert Testing with pure Js,Jquery and Boostrap..............`
   );
   toastAlertTextTag.classList.add("toastAlertText");
 
@@ -31,12 +33,14 @@ const openToastAlert = () => {
   closeButtonTag.addEventListener("click", () => {
     localStorage.setItem("accepted", "1");
     parentTag.style.bottom = `-${parentTag.offsetHeight}px`;
+    $("#afterClick").removeClass("afterClick");
   });
 };
 
 $(document).ready(() => {
   $("#btnClick").click(() => {
     openToastAlert();
+    $("#afterClick").addClass("afterClick");
   });
 });
 // window.addEventListener("load", () => {
