@@ -1,6 +1,6 @@
 const buttonTag = document.querySelector(".btn");
 const parentTag = document.querySelector(".parent");
-
+const btnClick = document.querySelector('#btnClick');
 const openToastAlert = () => {
   parentTag.innerHTML = "";
   const toastAlertContainerTag = document.createElement("div");
@@ -34,9 +34,14 @@ const openToastAlert = () => {
   });
 };
 
-window.addEventListener("load", () => {
-  const accepted = localStorage.getItem("accepted"); // "1"
-  if (accepted !== "1") {
+$(document).ready(() => {
+  $("#btnClick").click(() => {
     openToastAlert();
-  }
+  });
 });
+// window.addEventListener("load", () => {
+//   const accepted = localStorage.getItem("accepted"); // "1"
+//   if (accepted !== "1") {
+//     openToastAlert();
+//   }
+// });
