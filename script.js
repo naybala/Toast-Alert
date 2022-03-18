@@ -31,7 +31,6 @@ const openToastAlert = () => {
 
   // Attach event listener on closeButtonTag
   closeButtonTag.addEventListener("click", () => {
-    localStorage.setItem("accepted", "1");
     parentTag.style.bottom = `-${parentTag.offsetHeight}px`;
     $("#afterClick").removeClass("afterClick");
   });
@@ -43,9 +42,4 @@ $(document).ready(() => {
     $("#afterClick").addClass("afterClick");
   });
 });
-// window.addEventListener("load", () => {
-//   const accepted = localStorage.getItem("accepted"); // "1"
-//   if (accepted !== "1") {
-//     openToastAlert();
-//   }
-// });
+
